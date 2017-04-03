@@ -1,0 +1,329 @@
+@charset "UTF-8";
+* {
+  text-decoration: none;
+  outline: none;
+  color: #fff; }
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+html {
+  font-size: 16px; }
+
+/*Подключение шрифтов*/
+@font-face {
+  font-family: SegoeUIBold;
+  src: local("SegoeUIBold"), url("../font/SegoeUIBold/SegoeUIBold.ttf"), url("../font/SegoeUIBold/SegoeUIBold.woff"), url("../font/SegoeUIBold/SegoeUIBold.woff2"), url("../font/SegoeUIBold/SegoeUIBold.eot"); }
+
+@font-face {
+  font-family: SegoeUILight;
+  src: local("SegoeUILight"), url("../font/SegoeUILight/SegoeUILight.ttf"), url("../font/SegoeUILight/SegoeUILight.woff"), url("../font/SegoeUILight/SegoeUILight.woff2"), url("../font/SegoeUILight/SegoeUILight.eot"); }
+
+@font-face {
+  font-family: SegoeUIRegular;
+  src: local("SegoeUIRegular"), url("../font/SegoeUIRegular/SegoeUIRegular.ttf"), url("../font/SegoeUIRegular/SegoeUIRegular.woff"), url("../font/SegoeUIRegular/SegoeUIRegular.woff2"), url("../font/SegoeUIRegular/SegoeUIRegular.eot"); }
+
+@font-face {
+  font-family: SegoeUISemiBold;
+  src: local("SegoeUISemiBold"), url("../font/SegoeUISemiBold/SegoeUISemiBold.ttf"), url("../font/SegoeUISemiBold/SegoeUISemiBold.woff"), url("../font/SegoeUISemiBold/SegoeUISemiBold.woff2"), url("../font/SegoeUISemiBold/SegoeUISemiBold.eot"); }
+
+/*Подключение шрифтов END*/
+body {
+  font-family: "SegoeUIRegular";
+  font-size: 16px;
+  color: #fff;
+  min-width: 320px; }
+
+/*Background секции*/
+.bg_blue {
+  background: #4bcaff; }
+
+.bg_black {
+  background: #515f67; }
+
+/*btn*/
+.btn-small {
+  display: inline-block;
+  width: 140px;
+  padding: 13px 0px;
+  border: 2px solid #353f46;
+  font: 0.875rem "SegoeUIBold";
+  color: #353f46;
+  text-align: center;
+  text-transform: uppercase; }
+  .btn-small:hover {
+    border: 3px solid #353f46; }
+
+/*Background линии Title для секции */
+.bg-line-title_black:after {
+  background: #515f67 !important; }
+
+/*ШАБЛОН*/
+.services, .portfolio, .default, .twitter, .who-is, .testimonials, .contact, .footer {
+  padding: 70px 0px; }
+  .services__title, .portfolio__title, .default__title, .twitter__title, .who-is__title, .testimonials__title, .contact__title, .footer__title {
+    display: inline-block;
+    position: relative;
+    font: 1.875rem "SegoeUILight";
+    text-transform: uppercase;
+    margin-bottom: 50px; }
+    .services__title:after, .portfolio__title:after, .default__title:after, .twitter__title:after, .who-is__title:after, .testimonials__title:after, .contact__title:after, .footer__title:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 45px;
+      height: 2px;
+      bottom: -5px;
+      left: 0px;
+      background: #fff;
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+    .services__title:hover:after, .portfolio__title:hover:after, .default__title:hover:after, .twitter__title:hover:after, .who-is__title:hover:after, .testimonials__title:hover:after, .contact__title:hover:after, .footer__title:hover:after {
+      width: 100%; }
+    .services__title_black, .portfolio__title_black, .default__title_black, .twitter__title_black, .who-is__title_black, .testimonials__title_black, .contact__title_black, .footer__title_black {
+      color: #515f67; }
+  .services__text, .portfolio__text, .default__text, .twitter__text, .who-is__text, .testimonials__text, .contact__text, .footer__text {
+    font: 0.875rem "SegoeUIRegular";
+    margin-bottom: 25px;
+    line-height: 20px; }
+
+.who-is_bg, .contact_bg {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover; }
+  .who-is_bg:after, .contact_bg:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(53, 63, 71, 0.5);
+    z-index: 1; }
+
+/*Nav bar*/
+.navbar {
+  min-height: 150px;
+  padding: 54px 0px;
+  border-radius: 0px;
+  margin-bottom: 250px; }
+
+.navbar-collapse {
+  border: none; }
+
+.navbar-toggle:hover {
+  cursor: pointer; }
+
+.navbar-nav li a {
+  font: 0.875rem "SegoeUISemiBold";
+  padding: 8px 17px;
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  color: #fff !important;
+  line-height: 1;
+  -webkit-transition: all .5s;
+  transition: all .5s; }
+  .navbar-nav li a:hover {
+    color: #4bcaff !important;
+    border: 2px solid #4bcaff; }
+
+.navbar-brand {
+  height: 0px; }
+
+.navbar-default {
+  border: none;
+  background: rgba(53, 63, 70, 0.85); }
+
+.nav li {
+  margin-top: 9px; }
+
+/*site-header*/
+.site-header {
+  height: 100%;
+  min-height: 800px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center; }
+  .site-header__title {
+    text-align: center;
+    text-transform: uppercase;
+    font: 2.625rem "SegoeUILight";
+    line-height: 75px;
+    margin-bottom: 250px; }
+    .site-header__title span {
+      background: rgba(59, 69, 77, 0.8);
+      padding: 0px 10px; }
+
+/*Services*/
+.services-news {
+  font: 0.75rem "SegoeUISemiBold";
+  margin-bottom: 30px; }
+  .services-news:hover .services-news__title {
+    text-decoration: underline; }
+  .services-news__img {
+    margin-bottom: 15px; }
+  .services-news__title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 10px; }
+
+/*Portfolio*/
+.portfolio-nav li {
+  display: inline-block;
+  line-height: 43px; }
+  .portfolio-nav li a {
+    font: 0.875rem "SegoeUIBold";
+    color: #515f67;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    -webkit-transition: all .5s;
+    transition: all .5s; }
+    .portfolio-nav li a:hover {
+      color: #4bcaff;
+      border: 2px solid #4bcaff; }
+
+.portfolio-news {
+  display: block;
+  position: relative;
+  max-width: 270px;
+  max-height: 270px;
+  margin-bottom: 30px; }
+  .portfolio-news:hover:after, .portfolio-news:hover:before {
+    display: block; }
+  .portfolio-news:after {
+    display: none;
+    content: "+";
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    color: #fff;
+    font-size: 4.5rem;
+    line-height: 0; }
+  .portfolio-news:before {
+    display: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(63, 72, 79, 0.8); }
+  .portfolio-news .layout {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(151, 151, 151, 0.4);
+    top: 0px;
+    left: 0px; }
+
+/*Default*/
+.default__video {
+  max-width: 560px;
+  height: 313px;
+  width: 100%; }
+
+/*Twitter*/
+.twitter {
+  position: relative; }
+  .twitter:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 28px;
+    height: 22px;
+    background: url("../image/sprite.png") no-repeat -50px -176px;
+    top: 81px;
+    right: 10%; }
+  .twitter__text {
+    font: 1.75rem "SegoeUILight";
+    margin-bottom: 20px; }
+  .twitter__address {
+    font-size: 1.75rem;
+    font-family: "SegoeUILight"; }
+    .twitter__address a {
+      font-family: "SegoeUISemiBold"; }
+
+/*Who-is*/
+.who-is {
+  position: relative;
+  z-index: 2; }
+  .who-is__soc-ico li {
+    display: inline-block; }
+    .who-is__soc-ico li a {
+      font-size: 1.875rem;
+      padding: 5px 16px;
+      border: 2px solid transparent; }
+      .who-is__soc-ico li a:hover {
+        border: 2px solid #fff; }
+
+/*Testimonials*/
+.testimonials__text {
+  font: 1.75rem "SegoeUILight";
+  color: #515f67;
+  line-height: 40px;
+  margin-bottom: 35px; }
+
+.testimonials__link {
+  font: 0.875rem "SegoeUIBold";
+  color: #4bcaff; }
+  .testimonials__link:hover {
+    text-decoration: underline; }
+
+/*Contact*/
+.contact {
+  position: relative;
+  z-index: 2; }
+  .contact-name, .contact-email {
+    width: 100%;
+    font: 0.875rem "SegoeUIBold";
+    text-transform: uppercase;
+    margin-bottom: 5px; }
+  .contact input {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 35px;
+    padding: 0 15px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    background: transparent; }
+  .contact input[type="submit"] {
+    display: block;
+    max-width: 370px;
+    width: 100%;
+    padding: 15px 0px;
+    font: 0.875rem "SegoeUIBold";
+    background: #4bcaff;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    border: none; }
+  .contact-textarea {
+    width: 100% !important;
+    height: 186px;
+    border: 2px solid #fff;
+    background: transparent;
+    padding: 15px 15px;
+    margin-bottom: 40px; }
+
+/*Footer*/
+.footer {
+  font: 0.75rem "SegoeUISemiBold"; }
+  .footer-menu li {
+    display: inline-block;
+    padding: 0px 16px; }
+    .footer-menu li:not(:last-of-type) {
+      border-right: 2px solid #4b5860; }
+    .footer-menu li a {
+      text-transform: uppercase;
+      color: #515f67; }
+  .footer_copy {
+    color: #515f67; }
+  .footer_bg-black {
+    background-color: #353f47; }

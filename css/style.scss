@@ -1,0 +1,435 @@
+*{
+    text-decoration: none;
+    outline:none;
+    color:#fff;
+}
+
+.clearfix::before,
+.clearfix::after{
+    content:"";
+    display:table;
+}
+.clearfix::after{
+    clear:both;
+}
+
+$rem:16;
+@function rem($numb){
+    @return $numb / $rem + rem;
+}
+
+html{
+    font-size: $rem + px;
+}
+
+/*Подключение шрифтов*/
+@mixin font-face($font-name,$font-url){
+    @font-face {
+        font-family: $font-name;
+        src: local("" + $font-name +""),
+        url("../font/" + $font-url +"/"+ $font-name +".ttf"),
+        url("../font/" + $font-url +"/"+ $font-name + ".woff"),
+        url("../font/" + $font-url +"/"+ $font-name + ".woff2"),
+        url("../font/" + $font-url +"/"+ $font-name + ".eot");
+    }
+}
+
+@include font-face(SegoeUIBold, SegoeUIBold); //SegoeUIBold
+@include font-face(SegoeUILight, SegoeUILight); //SegoeUILight
+@include font-face(SegoeUIRegular, SegoeUIRegular); //SegoeUIRegular
+@include font-face(SegoeUISemiBold, SegoeUISemiBold);//SegoeUISemiBold
+/*Подключение шрифтов END*/
+
+
+body{
+    font-family: "SegoeUIRegular";
+    font-size: 16px;
+    color:#fff;
+    min-width: 320px;
+}
+
+/*Background секции*/
+.bg_blue{
+    background:#4bcaff;
+}
+.bg_black{
+    background: #515f67;
+}
+
+/*btn*/
+.btn-small{
+    display:inline-block;
+    width:140px;
+    padding:13px 0px;
+    border:2px solid #353f46;
+    font:rem(14) "SegoeUIBold";
+    color:#353f46;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover{
+        border:3px solid #353f46;
+    }
+}
+
+
+/*Background линии Title для секции */
+.bg-line-title_black:after{
+    background:#515f67 !important;
+}
+
+/*ШАБЛОН*/
+.services,.portfolio,.default,.twitter,.who-is,.testimonials,.contact,.footer{
+    padding:70px 0px;
+
+    &__title{
+        display:inline-block;
+        position: relative;
+        font:rem(30) "SegoeUILight";
+        text-transform: uppercase;
+        margin-bottom:50px;
+            &:after{
+                content:"";
+                display:inline-block;
+                position: absolute;
+                width:45px;
+                height:2px;
+                bottom:-5px;
+                left:0px;
+                background:#fff;
+                transition: all .5s;
+            }
+            &:hover:after{
+                width:100%;
+            }
+
+        &_black{
+            color:#515f67;
+        }
+    }
+
+    &__text{
+        font: 0.875rem "SegoeUIRegular";
+        margin-bottom: 25px;
+        line-height: 20px;
+    }
+
+}
+
+
+.who-is_bg , .contact_bg{
+        position: relative;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+
+        &:after{
+            content:"";
+            display:inline-block;
+            position: absolute;
+            width: 100%;
+            height:100%;
+            top:0;
+            left:0;
+            background:rgba(53, 63, 71, 0.5);
+            z-index: 1;
+        }
+    }
+
+
+/*Nav bar*/
+.navbar{
+    min-height: 150px;
+    padding:54px 0px;
+    border-radius: 0px;
+    margin-bottom:250px;
+}
+.navbar-collapse {
+	border:none;
+}
+.navbar-toggle:hover {
+	cursor: pointer;
+}
+.navbar-nav li a {
+    font:rem(14) "SegoeUISemiBold";
+    padding:8px 17px;
+    border:2px solid transparent;
+    text-transform: uppercase;
+    color:#fff !important;
+    line-height: 1;
+    transition: all .5s;
+
+    &:hover{
+        color:#4bcaff !important;
+        border:2px solid #4bcaff;
+    }
+}
+.navbar-brand {
+    height:0px;
+}
+.navbar-default{
+    border:none;
+    background:rgba(53, 63, 70, 0.85);
+}
+.nav li {
+    margin-top: 9px;
+}
+
+/*site-header*/
+.site-header{
+    height:100%;
+    min-height: 800px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
+
+    &__title{
+        text-align: center;
+        text-transform: uppercase;
+        font:rem(42) "SegoeUILight";
+        line-height: 75px;
+        margin-bottom:250px;
+
+        span{
+            background:rgba(59, 69, 77, 0.8);
+            padding:0px 10px;
+        }
+    }
+}
+
+/*Services*/
+.services-news{
+    font:rem(12) "SegoeUISemiBold";
+    margin-bottom:30px;
+
+    &:hover &__title{
+        text-decoration: underline;
+    }
+
+    &__img{
+        margin-bottom: 15px;
+    }
+    &__title{
+        text-transform: uppercase;
+        font-size: rem(24);
+        margin-bottom: 10px;
+    }
+}
+
+/*Portfolio*/
+.portfolio-nav{
+    li{
+        display: inline-block;
+        line-height: 43px;
+
+        a{
+            font:rem(14) "SegoeUIBold";
+            color:#515f67;
+            text-transform: uppercase;
+            padding:8px 16px;
+            border:2px solid transparent;
+            transition: all .5s;
+
+            &:hover{
+                color:#4bcaff;
+                border:2px solid #4bcaff;
+            }
+
+        }
+    }
+}
+.portfolio-news {
+    display:block;
+    position: relative;
+    max-width: 270px;
+    max-height: 270px;
+	margin-bottom:30px;
+
+    &:hover:after , &:hover:before{
+        display:block;
+    }
+    &:after{
+        display: none;
+        content:"+";
+        position: absolute;
+        top: 45%;
+        right: 40%;
+        color:#fff;
+        font-size: rem(72);
+        line-height: 0;
+    }
+    &:before{
+        display:none;
+        content:"";
+        position: absolute;
+        width:100%;
+        height:100%;
+        background:rgba(63, 72, 79, 0.8);
+    }
+
+    .layout{
+        content:"";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:rgba(151, 151, 151, 0.4);
+        top:0px;
+        left:0px;
+    }
+}
+
+/*Default*/
+.default{
+    &__video{
+        max-width: 560px;
+        height: 313px;
+        width:100%;
+    }
+}
+
+/*Twitter*/
+.twitter{
+    position: relative;
+
+    &:after{
+        content:"";
+        display: inline-block;
+        position: absolute;
+        width: 28px;
+	    height: 22px;
+        background: url('../image/sprite.png') no-repeat -50px -176px;
+        top: 81px;
+        right: 10%;
+    }
+
+    &__text{
+        font:rem(28) "SegoeUILight";
+        margin-bottom:20px;
+    }
+
+    &__address{
+        font-size: rem(28);
+        font-family:"SegoeUILight";
+
+        a{
+            font-family:"SegoeUISemiBold";
+        }
+    }
+}
+
+/*Who-is*/
+.who-is{
+    position: relative;
+    z-index: 2;
+
+    &__soc-ico{
+        li{
+            display: inline-block;
+
+            a{
+                font-size:rem(30);
+                padding:5px 16px;
+                border:2px solid transparent;
+
+                &:hover{
+                    border:2px solid #fff;
+                }
+            }
+        }
+    }
+
+
+}
+
+/*Testimonials*/
+.testimonials{
+
+    &__text{
+        font:rem(28) "SegoeUILight";
+        color:#515f67;
+        line-height: 40px;
+        margin-bottom:35px;
+    }
+    &__link{
+        font:rem(14) "SegoeUIBold";
+        color:#4bcaff;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+/*Contact*/
+.contact{
+    position: relative;
+    z-index: 2;
+
+    &-name, &-email{
+        width:100%;
+        font:rem(14) "SegoeUIBold";
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    input{
+        width:100%;
+        height:56px;
+        margin-bottom:35px;
+        padding:0 15px;
+        font-size:20px;
+        border:1px solid #fff;
+        background:transparent;
+    }
+
+    input[type="submit"]{
+        display: block;
+        max-width: 370px;
+        width:100%;
+        padding:15px 0px;
+        font:rem(14) "SegoeUIBold";
+        background:#4bcaff;
+        color:#fff;
+        text-align: center;
+        text-transform: uppercase;
+        border:none;
+    }
+
+    &-textarea{
+        width:100% !important;
+        height: 186px;
+        border:2px solid #fff;
+        background:transparent;
+        padding:15px 15px;
+        margin-bottom:40px;
+    }
+}
+
+/*Footer*/
+.footer{
+    font:rem(12) "SegoeUISemiBold";
+
+    &-menu{
+        li{
+            display:inline-block;
+            padding:0px 16px;
+
+            &:not(:last-of-type){
+                border-right:2px solid #4b5860;
+            }
+
+            a{
+                text-transform: uppercase;
+                color:#515f67;
+            }
+        }
+    }
+
+    &_copy{
+        color:#515f67;
+    }
+
+    &_bg-black{
+        background-color:#353f47;
+    }
+}
